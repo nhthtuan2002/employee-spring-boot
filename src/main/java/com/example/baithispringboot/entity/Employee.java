@@ -3,23 +3,20 @@ package com.example.baithispringboot.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Getter
 @Setter
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-
+@Builder
 @Entity
-@Table(name = "employee")
-
+@Table(name = "employees")
 public class Employee {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//
     private int id;
     private String name;
-    private String wage;
+    private Double wage;
 }
